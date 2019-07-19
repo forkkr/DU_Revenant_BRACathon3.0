@@ -5,8 +5,113 @@
     <title>Title</title>
 </head>
 <body>
-{% include 'nav.html' %}
+ {% include 'nav.html' %}
 Design Your Report Template..
+<script src="static/js/jquery-2.2.3.min.js"></script>
+
+
+ <div class="container"  style="margin-top: 100px;">
+
+
+
+
+<form id="form">
+    <div class="form-group " align="center">
+    <label style="font-size: xx-large; " for="reportName">Report Name</label>
+    <input style="font-size:20px; margin-bottom: 30px;" type="text" class="form-control" aria-label="Large" id="reportName" >
+    </div>
+
+
+  <div id="group1" class="form-row">
+    <div class="form-group col-md-8">
+      <label for="inputCity">Question 1</label>
+      <input type="text" class="form-control" id="inputCity">
+    </div>
+    <div class="form-group col-md-2">
+      <label for="inputState">Answer type</label>
+      <select id="inputState" class="form-control">
+        <option selected>Number</option>
+        <option>Text</option>
+      </select>
+    </div>
+    <div style="padding-top: 30px" class="form-group col-md-2">
+      <button style="margin-left: 20px" onclick="removeElement(id)" id="0" name="0" type="button" class="btn btn-primary">Remove</button>
+    </div>
+  </div>
+
+
+</form>
+<div>
+<button  id="btn" name="btn" type="button" class="btn btn-success">Add Question</button>
+</div>
+     <div>
+<button style="margin-left: 40%; margin-top: 20px; margin-bottom: 100px" type="submit" class="btn btn-primary btn-lg btn-bloc">Submit</button>
+</div>
+
+
+
+    <script>
+
+        var count=2;
+        $("#btn").click(function(){
+
+          $("#form").append(addNewRow(count));
+          count++;
+        });
+
+        function addNewRow(count){
+            var idd = "group"+count;
+            var newrow= '<div id="' + idd +' " class="form-row">'+
+                '<div class="form-group col-md-8">'+
+                 '<label for="inputCity">Question '+ count +'</label>'+
+                  '<input type="text" class="form-control" id="inputCity">'+
+                '</div>'+
+                '<div class="form-group col-md-2">'+
+                  '<label for="inputState">Answer type</label>'+
+                  '<select id="inputState" class="form-control">'+
+                   ' <option selected>Number</option>'+
+                    '<option>Text</option>'+
+                  '</select>'+
+                '</div>'+
+                 ' <div style="padding-top: 30px" class="form-group col-md-2">' +
+                    '<button style="margin-left: 20px" id="'+ count +'" name="'+ count +'" onclick="removeElement(id)" type="button" class="btn btn-primary">Remove</button>' +
+                  '</div>' +
+              '</div>';
+          return newrow;
+        }
+    </script>
+
+<div  id="reqs">
+{#<h3 align = "center"> Requirements </h3>#}
+<script>
+    var reqs_id = 0;
+    function removeElement(elementId) {
+        // Removes an element from the document
+        var idd = "group"+ elementId;
+        var element = document.getElementById(idd);
+        console.log(elementId);
+        //var element = document.getElementById(elementId);
+        console.log(element);
+        //element2.parentNode.removeChild(element2);
+        element.parentNode.removeChild(element);
+
+
+
+    }
+
+
+</script>
+{#<button type="button" value="Add" onclick="javascript:add();"> Add</button>#}
+
+{#<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>#}
+{#<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>#}
+{#<script type="text/JavaScript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js" ></script>#}
+{# <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>#}
+
+</div>
+ </div>
+
+
 {% include 'footer.html' %}
 </body>
 </html>
