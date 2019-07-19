@@ -2025,33 +2025,6 @@ footer .credits {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*--
 Author: W3layouts
 Author URL: http://w3layouts.com
@@ -2635,7 +2608,7 @@ p{text-align:center;}
 /*-- //About --*/
 /*--Service--*/
 .service,.adv-inner{
-background: url(../images/s1.jpg)no-repeat center;
+background: url(../images/demoImage.jpg)no-repeat center;
     background-size: cover;
 }
 .white-right p {
@@ -3243,7 +3216,7 @@ label.sub-title-w3layouts {
     margin-top: 1em;
     background:#d24055;
 }
-.contactright {background: url(../images/cc1.jpg)no-repeat center;
+.contactright {background: url(../images/demoImage.jpg)no-repeat center;
 }
 .contact_footer_grid_left h5 {
     font-size: 18px;
