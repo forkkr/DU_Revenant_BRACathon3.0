@@ -5,130 +5,61 @@
 {#    <script src="path/to/chartjs/dist/Chart.js"></script>#}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js" integrity="sha256-arMsf+3JJK2LoTGqxfnuJPFTU4hAK57MtIPdFpiHXOU=" crossorigin="anonymous"></script>
 
-<div style="margin-top: 10px;margin-left: 100px; width: 80%; height: 1000px">
-<h1 style="margin: 30px" align="center">Report 1 Analysis</h1>
+<div style="margin-top: 10px;margin-left: 100px; width: 80%; ">
+<h1 style="margin-bottom: 15px" align="center">Data Analysis</h1>
 <div class="row">
-    <div  style="position: relative; left: 150px; width: 500px; height: 400px">
-    <canvas style="text-align: center" id="myChart" width="50%" height="50%"></canvas>
+    <div  style="position: relative; left: 150px; width: 33%; height: 120px">
+    <canvas style="text-align: center" id="lineChart1" width="40%" height="40%"></canvas>
     </div>
 
-    <div  style="position: relative; left: 300px; width: 500px; height: 400px">
-    <canvas style="text-align: center" id="speedChart" width="50%" height="50%"></canvas>
+    <div  style="position: relative; left: 300px; width: 33%; height: 120px">
+    <canvas style="text-align: center" id="lineChart2" width="40%" height="40%"></canvas>
     </div>
-</div>
-<div  style="position: relative; left: 300px; width: 500px; height: 400px">
-    <canvas style="text-align: center" id="doughnutChart" width="50%" height="50%"></canvas>
-    </div>
-
 
 
 </div>
 
 
-<script>
-    var ctx = document.getElementById('doughnutChart');
-    var doughnutChart = new Chart(ctx, {
-    type: 'doughnut',
-    data: {
-        labels: ['Branch1', 'Branch2', 'Branch3', 'Branch4', 'Branch5', 'Branch6'],
-        datasets: [{
-            label: 'Attribute 1',
-            data: [12, 19, 3, 5, 2, 3],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
-        }]
-    },
-    options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
-                }
-            }]
-        }
-    }
-});
 
-</script>
+
+</div>
+
+
 
 <script>
-var ctx = document.getElementById('myChart');
-var myChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-        labels: ['Branch1', 'Branch2', 'Branch3', 'Branch4', 'Branch5', 'Branch6'],
-        datasets: [{
-            label: 'Attribute 1',
-            data: [12, 19, 3, 5, 2, 3],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
-        }]
-    },
-    options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
-                }
-            }]
-        }
-    }
-});
 
-var speedCanvas = document.getElementById("speedChart");
+var speedCanvas = document.getElementById("lineChart1");
 
 Chart.defaults.global.defaultFontFamily = "Lato";
 Chart.defaults.global.defaultFontSize = 18;
 
 var dataFirst = {
-    label: "Car A - Speed (mph)",
-    data: [0, 59, 75, 20, 20, 55, 40],
+    label: "PO-1",
+    data: [5500, 6000, 6200, 6500, 6300, 6600, 6800, 6800, 7200],
     lineTension: 0,
     fill: false,
     borderColor: 'red'
   };
 
 var dataSecond = {
-    label: "Car B - Speed (mph)",
-    data: [20, 15, 60, 60, 65, 30, 70],
+    label: "PO-2",
+    data: [5000, 6000, 6500, 6200, 6300, 6600, 6500, 6800, 7000],
     lineTension: 0,
     fill: false,
   borderColor: 'blue'
   };
 
+var dataThird = {
+    label: "PO-3",
+    data: [5200, 5800, 6200, 6500, 6000, 5800, 5300, 4800, 5000],
+    lineTension: 0,
+    fill: false,
+  borderColor: 'green'
+  };
+
 var speedData = {
-  labels: ["0s", "10s", "20s", "30s", "40s", "50s", "60s"],
-  datasets: [dataFirst, dataSecond]
+  labels: ["week1", "week2", "week3", "week4", "week5", "week6", "week7", "week8", "week9"],
+  datasets: [dataFirst, dataSecond, dataThird]
 };
 
 var chartOptions = {
@@ -136,10 +67,20 @@ var chartOptions = {
     display: true,
     position: 'top',
     labels: {
-      boxWidth: 80,
+      boxWidth: 20,
       fontColor: 'black'
     }
-  }
+  },
+  responsive: true,
+      scales: {
+        yAxes: [ {
+          display: true,
+          scaleLabel: {
+            display: true,
+            labelString: 'avg. profit'
+          }
+        } ]
+      }
 };
 
 var lineChart = new Chart(speedCanvas, {
@@ -151,6 +92,82 @@ var lineChart = new Chart(speedCanvas, {
 
 
 </script>
+
+
+
+
+
+<script>
+
+var speedCanvas = document.getElementById("lineChart2");
+
+Chart.defaults.global.defaultFontFamily = "Lato";
+Chart.defaults.global.defaultFontSize = 18;
+
+var dataFirst = {
+    label: "Agriculure",
+    data: [5000, 7000, 8000, 7500, 8200, 8800, 9400, 9300, 10000],
+    lineTension: 0,
+    fill: false,
+    borderColor: 'red'
+  };
+
+var dataSecond = {
+    label: "Livestock",
+    data: [4800, 6000, 6800, 7200, 8200, 9000, 9600, 10000, 11000],
+    lineTension: 0,
+    fill: false,
+  borderColor: 'blue'
+  };
+
+var dataThird = {
+    label: "Non-farm",
+    data: [5500, 5700, 6000, 6400, 6900, 7300, 8000, 8500, 9000],
+    lineTension: 0,
+    fill: false,
+  borderColor: 'green'
+  };
+
+var speedData = {
+  labels: ["month1", "month2", "month3", "month4", "month5", "month6", "month7", "month8", "month9"],
+  datasets: [dataFirst, dataSecond, dataThird]
+};
+
+var chartOptions = {
+  legend: {
+    display: true,
+    position: 'top',
+    labels: {
+      boxWidth: 20,
+      fontColor: 'black'
+    }
+  }
+  ,
+  responsive: true,
+      scales: {
+        yAxes: [ {
+          display: true,
+          scaleLabel: {
+            display: true,
+            labelString: 'avg. profit'
+          }
+        } ]
+      }
+};
+
+var lineChart2 = new Chart(speedCanvas, {
+  type: 'line',
+  data: speedData,
+  options: chartOptions
+});
+
+
+
+</script>
+
+
+
+
 
 
 {% endblock %}
