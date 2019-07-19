@@ -33,5 +33,22 @@ def about():
     return render_template('index.html', **locals())
 
 
+@app.route('/report-generation')
+def report_generation():
+    return render_template('report_generation.html', **locals())
+
+
+@app.route('/dashboard')
+def dashboard():
+    return render_template('dashboard.html', **locals())
+
+
+@app.route('/Notifications')
+def notifications():
+    return render_template('notifications.html', **locals())
+
+
+
+
 if __name__ == '__main__':
     app.run()
