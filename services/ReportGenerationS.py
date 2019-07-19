@@ -3,17 +3,28 @@ from Database.database import db
 
 
 def report_generation():
-    question_list = []
-    data = {'name': '', 'questions ': question_list, 'responses': []}
+    question_list = {}
+    data = {'name': '', 'questions': question_list, 'responses': []}
     report_id = db.reports.insert_one(data).inserted_id
     return report_id
 
 
 def add_questions(report_id, data):
     report = db.reports.find_one({'_id': ObjectId(report_id)})
-    question_list = report['questions']
-    question_list.apppend([question, question_type])
-    report['questions'] = question_list
+    report['name'] = data['reportName']
+    question_dic = report['questions']
+    cnt = 1
+    for dt in data:
+        if dt != 'reportName':
+            nm = dt[-1]
+            # print(nm)
+            qu = 'Q'+nm
+            if qu not in question_dic:
+                question_dic[qu] = {}
+            ky = dt
+            question_dic[qu][dt] = data[dt]
+
+    report['questions'] = question_dic
     # db.course_users.replace_one({'username': session['username']}, user)
     db.reports.replace_one({'_id': ObjectId(report_id)}, report)
     return
@@ -25,7 +36,10 @@ def get_report(report_id):
 
 
 def save_reponseToDB(data):
-    report_id = db.reports.insert_one(data).inserted_id
+    response = {}
+    for dt in data:
+        response[dt] = data[dt]
+    report_id = db.responses.insert_one(response).inserted_id
     return report_id
 
 

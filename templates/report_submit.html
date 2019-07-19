@@ -4,22 +4,17 @@
     <link rel="stylesheet" href="static/bootstrap-theme.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <div class="container">
-    <h2>Report Name</h2>
-    <form action="/report-submit-done" method="post" role="form">
-{#        { { data }}#}
-    <div class="form-group">
-          <label for="name">Name:</label>
-    <input type="text" class="form-control" id="name" name="name" placeholder="What's your name?">
-
-    <label for="email">Email:</label>
-    <input type="text" class="form-control" id="email" name="email" placeholder="Your email will be used to contact you.">
-
-    <label for="password">Password:</label>
-    <input type="password" class="form-control" id="password" name="password" placeholder="Enter a password.">
-
+    <div align="center">
+        <h3>{{ report_name }}</h3>
     </div>
-    <button type="submit" class="btn btn-success">Sign Up</button>
-
+    <form action="/report-submit-done/{{ report_id }}" method="post" role="form">
+    <div class="form-group">
+        {% for key in keyList %}
+            <label for="name">{{ questions[key]['q'] }}</label>
+            <input type="text" class="form-control" id={{ key }} name={{ key }}>
+        {% endfor %}
+    </div>
+        <button type="submit" class="btn btn-success">Submit</button>
     </form>
     </div>
 {#        {% with messages = get_flashed_messages(with_categories=true) %}#}

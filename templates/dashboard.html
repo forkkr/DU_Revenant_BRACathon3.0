@@ -26,7 +26,24 @@
         }
 
     </style>
+
     <div align="center" style="padding-bottom: 20px"><h1> Dashboard</h1></div>
+    {% for rep in report_list %}
+        <div class = "container" align="center" style=" border:1px solid black; display:flex; flex-direction: row; justify-content: center; align-items: center; height: 50px; width: 80%" >
+            <div align="left" style="width: 80%; float: left;">
+                <h6> Response for Report: {{ rep[1] }} </h6>
+            </div>
+            <div class="btn-group" style="width: 20%; float: right;">
+              <form>
+                <button formaction="/responses-view/{{ rep[0] }}">View</button>
+              </form>
+              <form>
+                <button formaction="/responses-analysis/{{ rep[0]}}">Analysis</button>
+              </form>
+            </div>
+        </div>
+    {% endfor %}
+    
     <div class = "container" align="center" style=" border:1px solid black; display:flex; flex-direction: row; justify-content: center; align-items: center; height: 50px; width: 80%" >
         <div align="left" style="width: 80%; float: left;">
             <h6> Report Name: Something queries have been asked </h6>

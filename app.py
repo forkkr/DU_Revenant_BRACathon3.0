@@ -1,14 +1,45 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, session
 
 from services import ReportGenerationS as RGS
 from classes import ReportGenerationClass as RGC
-
+from services import auth
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route('/home')
 def home():
     return render_template('index.html', **locals())
+
+
+@app.route('/')
+def login(data=None):
+    if 'username' in session.keys():
+        return redirect('/home')
+    return render_template('login.html', **locals())
+
+
+@app.route('/validation-login-info', methods=['POST', 'GET'])
+def validation_login_info():
+    if request.method == 'POST':
+        data = request.form
+        flag, username = auth.validation(data)
+        if flag == False:
+            return redirect('/')
+    session['username'] = username
+    return render_template('index.html', **locals())
+
+
+@app.route('/register')
+def register():
+    return render_template('register.html', **locals())
+
+
+@app.route('/save-register-info', methods=['POST', 'GET'])
+def save_register_info():
+    if request.method == 'POST':
+        data = request.form
+        auth.save_register_info(data)
+    return redirect('/home')
 
 
 @app.route('/services')
@@ -42,18 +73,22 @@ def report_generation():
     return render_template('report_generation.html', **locals())
 
 
-@app.route('/report-generation-done', methods=['POST', 'GET'])
-def report_generation_done():
-    print(request.form)
+@app.route('/report-generation-done/<report_id>', methods=['POST', 'GET'])
+def report_generation_done(report_id):
+    # print(request.form)
     if request.method == "POST":
         data = request.form
-        print(data)
+        RGS.add_questions(report_id, data)
     # report_id = RGS.report_generation()
     return render_template('report_share.html', **locals())
 
 
 @app.route('/dashboard')
 def dashboard():
+    report_id = '5d32001e2ce6750a5b630230'
+    report = RGS.get_report(report_id)
+    report_list = []
+    report_list.append([report_id, report['name']])
     return render_template('dashboard.html', **locals())
 
 
@@ -64,38 +99,43 @@ def notifications():
 
 @app.route('/report-submit')
 def report_submit():
+    report_id = '5d32001e2ce6750a5b630230'
+    report = RGS.get_report(report_id)
+    report_name = report['name']
+    questions = report['questions']
+    questions = dict(sorted(questions.items()))
+    # print(questions, ' Here printing')
+    keyList = []
+    for key in sorted(questions):
+        keyList.append(key)
+    keyList = sorted(keyList)
+    print(keyList)
     return render_template('report_submit.html', **locals())
 
 
-@app.route('/report-submit-done', methods=['POST', 'GET'])
-def report_submit_done():
-    # if request.method=="POST":
-    #     data = request.form
-    return render_template('index.html', **locals())
+@app.route('/report-submit-done/<report_id>', methods=['POST', 'GET'])
+def report_submit_done(report_id):
+    if request.method == 'POST':
+        data = request.form
+        response_id = RGS.save_reponseToDB(data)
+        RGS.attached_responseID_to_reportID(report_id, response_id)
+    return redirect('/')
 
 
-@app.route('/responses-view', methods=['POST', 'GET'])
-def response_view():
+@app.route('/responses-view/<report_id>', methods=['POST', 'GET'])
+def response_view(report_id):
     return render_template('responses_view.html')
 
 
-@app.route('/responses-analysis', methods=['POST', 'GET'])
-def response_analysis():
+@app.route('/responses-analysis/<report_id>', methods=['POST', 'GET'])
+def response_analysis(report_id):
     return render_template('responses_analysis.html')
 
-@app.route('/login', methods=['POST', 'GET'])
-def login():
-    return render_template('login.html')
 
-@app.route('/login-done', methods=['POST', 'GET'])
-def login_submit_done():
+@app.route('/data-analysis', methods=['POST', 'GET'])
+def data_analysis():
+    return render_template('responses_analysis.html')
 
-    if request.method == "POST":
-        data = request.form
-        print(data)
-        if data['role']=='zm':
-            return render_template('login.html')
-    return render_template('index.html', **locals())
 
 if __name__ == '__main__':
     app.run()
