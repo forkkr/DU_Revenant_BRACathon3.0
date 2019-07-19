@@ -4,10 +4,11 @@ from services import ReportGenerationS as RGS
 from classes import ReportGenerationClass as RGC
 from services import auth
 app = Flask(__name__)
-
+app.secret_key = "moonmuniakashob"
 
 @app.route('/home')
 def home():
+    print(session['username'])
     return render_template('index.html', **locals())
 
 
@@ -22,12 +23,19 @@ def login(data=None):
 def validation_login_info():
     if request.method == 'POST':
         data = request.form
-        flag, username = auth.validation(data)
+        flag, user = auth.validation(data)
+        print(flag, user, ' printing from validation ')
         if flag == False:
             return redirect('/')
-    session['username'] = username
+    session['username'] = user['username']
     return render_template('index.html', **locals())
 
+
+@app.route("/logout")
+def logout():
+    if 'username' in session.keys():
+        session.pop('username')
+    return redirect('/')
 
 @app.route('/register')
 def register():

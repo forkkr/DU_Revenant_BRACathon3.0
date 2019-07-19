@@ -273,7 +273,7 @@ input[type=text]:placeholder {
 
 </head>
 
-<body style="background-image:url('static/images/demoImage.jpg');" >
+<body style="background-image:url('/static/images/demoImage.jpg');" >
 
 
 <div class="wrapper fadeInDown">
@@ -286,14 +286,15 @@ input[type=text]:placeholder {
     </div>
 
     <!-- Login Form -->
-    <form id="loginForm" action="/login-done" method="POST">
-      <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
+    <form id="loginForm" action='/validation-login-info' method="POST">
+
+      <input type="text" id="username" class="fadeIn second" name="username" placeholder="user name">
       <input type="text" id="password" class="fadeIn third" name="password" placeholder="password">
-        <select id="role" name="role" style="alignment: center; color: #0c5460" class="fadeIn fourth;" >
-          <option value="bm">Branch Manager</option>
-          <option value="rm">Regional Manager</option>
-          <option value="zm">Zonal Manager</option>
-          <option value="ho">Head Office</option>
+        <select id="rank" name="rank" style="alignment: center; color: #0c5460" class="fadeIn fourth;" >
+          <option value="0">Choose..</option>
+            <option value="1">Branch Manager</option>
+            <option value="2">Regional Manager</option>
+            <option value="3">Head Office</option>
         </select> <br>
       <input type="submit" class="fadeIn fourth" value="Log In">
     </form>
