@@ -83,6 +83,19 @@ def response_view():
 def response_analysis():
     return render_template('responses_analysis.html')
 
+@app.route('/login', methods=['POST', 'GET'])
+def login():
+    return render_template('login.html')
+
+@app.route('/login-done', methods=['POST', 'GET'])
+def login_submit_done():
+
+    if request.method == "POST":
+        data = request.form
+        print(data)
+        if data['role']=='zm':
+            return render_template('login.html')
+    return render_template('index.html', **locals())
 
 if __name__ == '__main__':
     app.run()
