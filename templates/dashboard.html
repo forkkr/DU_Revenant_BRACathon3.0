@@ -1,12 +1,70 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-{% include 'nav.html' %}
-Design it for showing the all reported generated
-{% include 'footer.html' %}
-</body>
-</html>
+{% include 'page_layout.html' %}
+{% block body %}
+    <style>
+            .btn-group button {
+          background-color: #4CAF50; /* Green background */
+          border: 1px solid green; /* Green border */
+          color: white; /* White text */
+          padding: 10px 24px; /* Some padding */
+          cursor: pointer; /* Pointer/hand icon */
+          float: left; /* Float the buttons side by side */
+        }
+            .btn-group button:not(:last-child) {
+          border-right: none; /* Prevent double borders */
+        }
+
+        /* Clear floats (clearfix hack) */
+        .btn-group:after {
+          content: "";
+          clear: both;
+          display: table;
+        }
+
+        /* Add a background color on hover */
+        .btn-group button:hover {
+          background-color: #3e8e41;
+        }
+
+    </style>
+    <div align="center" style="padding-bottom: 20px"><h1> Dashboard</h1></div>
+    <div class = "container" align="center" style=" border:1px solid black; display:flex; flex-direction: row; justify-content: center; align-items: center; height: 50px; width: 80%" >
+        <div align="left" style="width: 80%; float: left;">
+            <h6> Report Name: Something queries have been asked </h6>
+        </div>
+        <div class="btn-group" style="width: 20%; float: right;">
+          <form>
+            <button formaction="/responses-view">View</button>
+          </form>
+          <form>
+            <button formaction="/responses-analysis">Analysis</button>
+          </form>
+        </div>
+    </div>
+
+    <div class = "container" align="center" style=" border:1px solid black; display:flex; flex-direction: row; justify-content: center; align-items: center; height: 50px; width: 80%" >
+        <div align="left" style="width: 80%; float: left;"><h6> Report Name: Something queries have been asked </h6></div>
+        <div class="btn-group" style="width: 20%; float: right;">
+          <button >View</button>
+          <button>Analysis</button>
+        </div>
+    </div>
+
+    <div class = "container" align="center" style=" border:1px solid black; display:flex; flex-direction: row; justify-content: center; align-items: center; height: 50px; width: 80%" >
+        <div align="left" style="width: 80%; float: left;"><h6> Report Name: Something queries have been asked </h6></div>
+        <div class="btn-group" style="width: 20%; float: right;">
+          <button >View</button>
+          <button>Analysis</button>
+        </div>
+    </div>
+
+    <div class = "container" align="center" style=" border:1px solid black; display:flex; flex-direction: row; justify-content: center; align-items: center; height: 50px; width: 80%" >
+        <div align="left" style="width: 80%; float: left;"><h6> Report Name: Something queries have been asked </h6></div>
+        <div class="btn-group" style="width: 20%; float: right;">
+          <button >View</button>
+          <button>Analysis</button>
+        </div>
+    </div>
+
+
+
+{% endblock %}

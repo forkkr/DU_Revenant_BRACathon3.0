@@ -1,4 +1,7 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
+
+from services import ReportGenerationS as RGS
+from classes import ReportGenerationClass as RGC
 
 app = Flask(__name__)
 
@@ -35,7 +38,18 @@ def about():
 
 @app.route('/report-generation')
 def report_generation():
+    report_id = RGS.report_generation()
     return render_template('report_generation.html', **locals())
+
+
+@app.route('/report-generation-done', methods=['POST', 'GET'])
+def report_generation_done():
+    print(request.form)
+    if request.method == "POST":
+        data = request.form
+        print(data)
+    # report_id = RGS.report_generation()
+    return render_template('report_share.html', **locals())
 
 
 @app.route('/dashboard')
@@ -48,6 +62,26 @@ def notifications():
     return render_template('notifications.html', **locals())
 
 
+@app.route('/report-submit')
+def report_submit():
+    return render_template('report_submit.html', **locals())
+
+
+@app.route('/report-submit-done', methods=['POST', 'GET'])
+def report_submit_done():
+    # if request.method=="POST":
+    #     data = request.form
+    return render_template('index.html', **locals())
+
+
+@app.route('/responses-view', methods=['POST', 'GET'])
+def response_view():
+    return render_template('responses_view.html')
+
+
+@app.route('/responses-analysis', methods=['POST', 'GET'])
+def response_analysis():
+    return render_template('responses_analysis.html')
 
 
 if __name__ == '__main__':

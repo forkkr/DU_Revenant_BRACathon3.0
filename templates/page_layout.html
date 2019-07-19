@@ -2,11 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>UPG BRAC</title>
 </head>
+<style>
+    .blocker { height: 100px;};
+</style>
 <body>
+
 {% include 'nav.html' %}
-this is for notifications
+<div class="blocker">
+    {% block body %} {% endblock %}
+</div>
+
 {% include 'footer.html' %}
+
 </body>
 </html>
