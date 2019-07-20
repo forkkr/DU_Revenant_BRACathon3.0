@@ -1,6 +1,72 @@
 {% include 'page_layout.html' %}
 {% block body %}
+    <link rel="stylesheet" media="screen" href="static/bootstrap.min.css">
+    <link rel="stylesheet" href="static/bootstrap-theme.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <div class="container">
+    <div align="center">
+        <h3> Send Report</h3>
+        <h4>{{ report_name }}</h4>
 
-    share reports
+        <script>
+            function selectRole() {
 
-{% endblock%}
+                var e = document.getElementById("roleSelect");
+                var idx = e.selectedIndex;
+                if (e.options[e.selectedIndex].value=='bm') {
+                    var e2 = document.getElementById('formHide');
+                    e2.style.display = 'block';
+                }
+
+            }
+            function showNhideForm(){
+
+                var e = document.getElementById("checkboxForm");
+                console.log(e.style.display)
+                if(e.style.display == 'none') e.style.display='block';
+                else if(e.style.display == 'block') e.style.display='none';
+
+            }
+        </script>
+
+
+        <button style="font-size: 15px; color: #f3f3f3; background: #17a2b8; padding: 15px; margin: 15px;"> Select Office Type</button>
+
+        <select id = "roleSelect" name="ab" onchange="if (this.selectedIndex) selectRole();" style="padding: 15px; margin: 15px;">
+            <option value="-1">--</option>
+            <option value="zm">Zone</option>
+            <option value="rm">Region</option>
+            <option value="bm">Branch</option>
+        </select>
+
+
+        <button id="formHide" onclick="showNhideForm()" style=" display: none; font-size: 15px; color: #f3f3f3; background: #17a2b8; padding: 15px; margin: 15px;" >Select Branch Manager</button>
+
+
+    <form action="/send-report-done/{{ report_id }}" method="POST" role="form" id="checkboxForm" style="display: none; padding: 10px; margin-left: 20px">
+      <input type="checkbox" name="vehicle1" value="bm1"> Branch Manager 1, X Branch<br>
+      <input type="checkbox" name="vehicle2" value="bm2"> Branch Manager 2, Y Branch<br>
+      <input type="checkbox" name="vehicle3" value="bm3"> Branch Manager 3, Z Branch<br><br>
+{#      <input type="submit" value="Send" style="font-size: 12px; color: #f3f3f3; background: #17a2b8; padding: 10px; margin: 10px;">#}
+{#    </form>#}
+            <button type="submit" class="btn btn-success">Send</button>
+    </form>
+    </div>
+{#        {% with messages = get_flashed_messages(with_categories=true) %}#}
+{#    {% if messages %}#}
+{#    #}
+{#    {% for message in messages %}#}
+{#    {% if "Error" not in message[1]: %}#}
+{#    <div class="alert alert-info">#}
+{#                    <strong>Success! </strong> { { message[1] }}</div>#}
+{#    {% endif %}#}
+{#    #}
+{#    {% if "Error" in message[1]: %}#}
+{#    <div class="alert alert-warning">#}
+{#                    { { message[1] }}</div>#}
+{#    {% endif %}#}
+{#    {% endfor %}#}
+{#    {% endif %}#}
+{#    {% endwith %}#}
+    </div>
+{% endblock %}

@@ -156,9 +156,13 @@ def correlation_graph():
 def trend_analysis():
     return render_template('trend_analysis.html')
 
-@app.route('/send-report', methods=['POST', 'GET'])
-def send_report():
-    return render_template('sendReport.html')
+
+@app.route('/send-report-done/<report_id>', methods=['POST', 'GET'])
+def send_report_done(report_id):
+    print(report_id, ' : sent_reportId')
+    return redirect('/home')
+
+
 
 @app.route('/t', methods=['POST', 'GET'])
 def test():
