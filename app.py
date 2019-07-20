@@ -156,5 +156,13 @@ def correlation_graph():
 def trend_analysis():
     return render_template('trend_analysis.html')
 
+@app.route('/send-report', methods=['POST', 'GET'])
+def send_report():
+    return render_template('sendReport.html')
+
+@app.route('/t', methods=['POST', 'GET'])
+def test():
+    return render_template('test.html')
+
 if __name__ == '__main__':
     app.run()
