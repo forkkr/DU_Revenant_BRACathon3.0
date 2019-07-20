@@ -149,12 +149,17 @@ def data_analysis():
 
 @app.route('/correlation-graph', methods=['POST', 'GET'])
 def correlation_graph():
-    return render_template('correlation_graph.html')
+    return render_template('correlation_graph.html', **locals())
 
 
 @app.route('/trend-analysis', methods=['POST', 'GET'])
 def trend_analysis():
-    return render_template('trend_analysis.html')
+    return render_template('trend_analysis.html', **locals())
+
+
+@app.route('/prediction', methods=['POST', 'GET'])
+def prediction():
+    return render_template('predictions.html', **locals())
 
 
 @app.route('/send-report-done/<report_id>', methods=['POST', 'GET'])
