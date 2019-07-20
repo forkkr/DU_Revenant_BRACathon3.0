@@ -1,12 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-{% include 'nav.html' %}
-this is for notifications
-{% include 'footer.html' %}
-</body>
-</html>
+{% include 'page_layout.html' %}
+
+{% block body %}
+
+{#        <!--latest newa-->#}
+          <section class="blog py-md-4 py-md-3 py-sm-3 py-3">
+             <div class="container py-md-5 py-md-5 py-sm-4 py-3">
+                <h6 class="title text-center mb-md-5 mb-md-4 mb-sm-4 mb-3">Notifications</h6>
+                    <div class="col-lg-12 left-side-agile mb-6">
+                      <div class="least-w3layouts-text-gap">
+                        <div class="col-lg-12 col-sm-8 news-agile-text ">
+                           <h8> Dear, Here is a report attached herewith. Please the report on UPG field weekly report summary.</h8>
+                            <p style="justify-content: left">
+                                <span class="far fa-calendar-check" >12/4/2019</span>
+                            </p>
+                        </div>
+                      </div>
+                   </div>
+
+                 <div class="col-lg-12 left-side-agile mb-6">
+                      <div class="least-w3layouts-text-gap">
+                        <div class="col-lg-12 col-sm-8 news-agile-text ">
+                           <h8> Here is a report template on UPG progress summaries based on branch </h8>
+                            <p style="justify-content: left">
+                                <span class="far fa-calendar-check" >12/4/2019</span>
+                            </p>
+                        </div>
+                      </div>
+                   </div>
+
+                    <div class="col-lg-12 left-side-agile mb-6">
+                      <div class="least-w3layouts-text-gap">
+                        <div class="col-lg-12 col-sm-8 news-agile-text ">
+                           <h8> Here is a report template on UPG progress. Please submit the report as soon as possible</h8>
+                            <p style="justify-content: left">
+                                <span class="far fa-calendar-check" >12/4/2019</span>
+                            </p>
+                        </div>
+                      </div>
+                   </div>
+
+                 <div class="col-lg-12 left-side-agile mb-6">
+                      <div class="least-w3layouts-text-gap">
+                        <div class="col-lg-12 col-sm-8 news-agile-text ">
+                           <h8> Here is a report template on Annual progress attached herewith. Please find the report.</h8>
+                            <p style="justify-content: left">
+                                <span class="far fa-calendar-check" >12/4/2019</span>
+                            </p>
+                        </div>
+                      </div>
+                   </div>
+
+                </div>
+             </div>
+          </section>
+
+
+{% endblock %}

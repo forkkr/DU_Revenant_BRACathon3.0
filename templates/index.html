@@ -18,8 +18,8 @@
       <div style="margin-top: 10px; ">
           <section class="service py-md-1 py-md-1 py-sm-1 py-1" >
              <div class="container py-lg-5 py-md-5 py-sm-4 py-3" style=" transform: scale(.8) ;">
-                <h3 class="title clr text-center mb-md-1 mb-md-1 mb-sm-1 mb-1">Services</h3>
-                <div class="row agile-service-grids-all" >
+{#                <h3 class="title clr text-center mb-md-1 mb-md-1 mb-sm-1 mb-1">Services</h3>#}
+                <div class="row agile-service-grids-all" style="margin-top: 50px">
                    <div class="col-lg-4 w3layouts-service-list">
                       <div class="row white-shadow rounded p-lg-4 p-md-4 p-sm-3 p-3 mb-3 clr-one" style="height: 150px; width: 360px;">
                          <div class="col-md-3 col-sm-3 white-left">
@@ -41,9 +41,10 @@
                          </div>
                       </div>
                       <div class="row white-shadow rounded p-lg-4 p-md-4 p-sm-3 p-3 clr-three" style="height: 150px; width: 360px;">
-                         <div class="col-md-3 col-sm-3 white-left">
-                            <span class="fab fa-slideshare banner-icon"></span>
+                          <div class="col-md-3 col-sm-3 white-left">
+                            <span class="fab fa-cloudscale banner-icon"></span>
                          </div>
+
                          <div class="col-md-9 col-sm-9 white-right">
                              <a href="{{ url_for('report_submit') }}"> <h4>Report Submit</h4> </a>
                             <!--<p>Individual Participants</p>-->
@@ -64,7 +65,7 @@
                    <div class="col-lg-4  w3layouts-service-list" >
                       <div class="row white-shadow rounded p-lg-4 p-md-4 p-sm-3 p-3 mb-3 clr-four" style="height: 150px; width: 360px;">
                          <div class="col-md-3 col-sm-3 white-left">
-                            <span class="fas fa-chart-line banner-icon"></span>
+                            <span class="fab fa-slideshare banner-icon"></span>
                          </div>
                          <div class="col-md-9 col-sm-9 white-right">
 
@@ -73,8 +74,9 @@
                          </div>
                       </div>
                       <div class="row white-shadow rounded p-lg-4 p-md-4 p-sm-3 p-3 mb-3 clr-five" style="height: 150px; width: 360px;">
-                         <div class="col-md-3 col-sm-3 white-left">
-                            <span class="fab fa-cloudscale banner-icon"></span>
+
+                          <div class="col-md-3 col-sm-3 white-left">
+                            <span class="fas fa-chart-line banner-icon"></span>
                          </div>
                          <div class="col-md-9 col-sm-9 white-right">
                              <a href="{{ url_for('data_analysis')}}"> <h4> Data Analysis </h4> </a>
@@ -101,112 +103,112 @@
       <!-- Latest updates -->
 
 
-    <!--latest newa-->
-          <section class="blog py-lg-4 py-md-3 py-sm-3 py-3">
-             <div class="container py-lg-5 py-md-5 py-sm-4 py-3">
-                <h3 class="title text-center mb-lg-5 mb-md-4 mb-sm-4 mb-3">Latest Updates</h3>
-                <div class="row blog-top-grids">
-                   <div class="col-lg-12 left-side-agile mb-3">
-                      <div class="least-w3layouts-text-gap">
-                         <div class="row  py-3">
-                            <div class="col-md-4 col-sm-4 news-img">
-                               <img src="static/images/l1.jpg" alt="" class="image-fluid">
-                            </div>
-                            <div class="col-md-8 col-sm-8 news-agile-text ">
-                               <h4>Lorem ipsum dolor sit amet, consectetur
-                               </h4>
-                               <div class="news-date my-3">
-                                  <ul>
-                                     <li><span class="far fa-calendar-check" ></span><a href="#">12/4/2019</a></li>
-                                     <li><span class="fas fa-tags"></span><a href="#">5 Tags</a></li>
-                                     <li><span class="far fa-comments"></span><a href="#">5 Comments</a></li>
-                                  </ul>
-                               </div>
-                               <p class="groom-right text-left">velit sagittis vehicula. Duis posuere
-                                  ex in mollis iaculis. Suspendisse tincidunt ut velit id euismod.vulputate turpis porta
-                               </p>
-                            </div>
-                         </div>
-                      </div>
-                   </div>
-                   <div class="col-lg-6 left-side-agile">
-                      <div class="least-w3layouts-text-gap">
-                         <div class="row py-3">
-                            <div class=" col-md-4 col-sm-4 news-img">
-                               <img src="static/images/l2.jpg" alt="" class="image-fluid">
-                            </div>
-                            <div class=" col-md-8 col-sm-8 news-agile-text ">
-                               <h4>Lorem ipsum dolor sit amet, consectetur
-                               </h4>
-                               <div class="news-date my-3">
-                                  <ul>
-                                     <li><span class="far fa-calendar-check" ></span><a href="#">12/4/2019</a></li>
-                                     <li><span class="fas fa-tags"></span><a href="#">5 Tags</a></li>
-                                     <li><span class="far fa-comments"></span><a href="#">5 Comments</a></li>
-                                  </ul>
-                               </div>
-                               <p class="groom-right text-left">velit sagittis vehicula. Duis posuere
-                                  ex in mollis iaculis. Suspendisse tincidunt ut velit id euismod.vulputate turpis porta
-                               </p>
-                            </div>
-                         </div>
-                      </div>
-                   </div>
-                </div>
-                <div class="row blog-top-grids">
-                   <div class="col-lg-6 left-side-agile mb-3">
-                      <div class="least-w3layouts-text-gap">
-                         <div class="row py-3">
-                            <div class=" col-md-4 col-sm-4 news-img">
-                               <img src="static/images/l3.jpg" alt="" class="image-fluid">
-                            </div>
-                            <div class=" col-md-8 col-sm-8 news-agile-text ">
-                               <h4>Lorem ipsum dolor sit amet, consectetur
-                               </h4>
-                               <div class="news-date my-3">
-                                  <ul>
-                                     <li><span class="far fa-calendar-check" ></span><a href="#">12/4/2019</a></li>
-                                     <li><span class="fas fa-tags"></span><a href="#">5 Tags</a></li>
-                                     <li><span class="far fa-comments"></span><a href="#">5 Comments</a></li>
-                                  </ul>
-                               </div>
-                               <p class="groom-right text-left">velit sagittis vehicula. Duis posuere
-                                  ex in mollis iaculis. Suspendisse tincidunt ut velit id euismod.vulputate turpis porta
-                               </p>
-                            </div>
-                         </div>
-                      </div>
-                   </div>
-                   <div class="col-lg-6 left-side-agile">
-                      <div class="least-w3layouts-text-gap">
-                         <div class="row py-3">
-                            <div class=" col-md-4 col-sm-4 news-img">
-                               <img src="static/images/l4.jpg" alt="" class="image-fluid">
-                            </div>
-                            <div class=" col-md-8 col-sm-8 news-agile-text ">
-                               <h4>Lorem ipsum dolor sit amet, consectetur
-                               </h4>
-                               <div class="news-date my-3">
-                                  <ul>
-                                     <li><span class="far fa-calendar-check" ></span><a href="#">12/4/2019</a></li>
-                                     <li><span class="fas fa-tags"></span><a href="#">5 Tags</a></li>
-                                     <li><span class="far fa-comments"></span><a href="#">5 Comments</a></li>
-                                  </ul>
-                               </div>
-                               <p class="groom-right text-left">velit sagittis vehicula. Duis posuere
-                                  ex in mollis iaculis. Suspendisse tincidunt ut velit id euismod.vulputate turpis porta
-                               </p>
-                            </div>
-                         </div>
-                      </div>
-                   </div>
-                </div>
-             </div>
-          </section>
-          <!--latest news-->
-
-
-
+{#    <!--latest newa-->#}
+{#          <section class="blog py-lg-4 py-md-3 py-sm-3 py-3">#}
+{#             <div class="container py-lg-5 py-md-5 py-sm-4 py-3">#}
+{#                <h3 class="title text-center mb-lg-5 mb-md-4 mb-sm-4 mb-3">Latest Updates</h3>#}
+{#                <div class="row blog-top-grids">#}
+{#                   <div class="col-lg-12 left-side-agile mb-3">#}
+{#                      <div class="least-w3layouts-text-gap">#}
+{#                         <div class="row  py-3">#}
+{#                            <div class="col-md-4 col-sm-4 news-img">#}
+{#                               <img src="static/images/l1.jpg" alt="" class="image-fluid">#}
+{#                            </div>#}
+{#                            <div class="col-md-8 col-sm-8 news-agile-text ">#}
+{#                               <h4>Lorem ipsum dolor sit amet, consectetur#}
+{#                               </h4>#}
+{#                               <div class="news-date my-3">#}
+{#                                  <ul>#}
+{#                                     <li><span class="far fa-calendar-check" ></span><a href="#">12/4/2019</a></li>#}
+{#                                     <li><span class="fas fa-tags"></span><a href="#">5 Tags</a></li>#}
+{#                                     <li><span class="far fa-comments"></span><a href="#">5 Comments</a></li>#}
+{#                                  </ul>#}
+{#                               </div>#}
+{#                               <p class="groom-right text-left">velit sagittis vehicula. Duis posuere#}
+{#                                  ex in mollis iaculis. Suspendisse tincidunt ut velit id euismod.vulputate turpis porta#}
+{#                               </p>#}
+{#                            </div>#}
+{#                         </div>#}
+{#                      </div>#}
+{#                   </div>#}
+{#                   <div class="col-lg-6 left-side-agile">#}
+{#                      <div class="least-w3layouts-text-gap">#}
+{#                         <div class="row py-3">#}
+{#                            <div class=" col-md-4 col-sm-4 news-img">#}
+{#                               <img src="static/images/l2.jpg" alt="" class="image-fluid">#}
+{#                            </div>#}
+{#                            <div class=" col-md-8 col-sm-8 news-agile-text ">#}
+{#                               <h4>Lorem ipsum dolor sit amet, consectetur#}
+{#                               </h4>#}
+{#                               <div class="news-date my-3">#}
+{#                                  <ul>#}
+{#                                     <li><span class="far fa-calendar-check" ></span><a href="#">12/4/2019</a></li>#}
+{#                                     <li><span class="fas fa-tags"></span><a href="#">5 Tags</a></li>#}
+{#                                     <li><span class="far fa-comments"></span><a href="#">5 Comments</a></li>#}
+{#                                  </ul>#}
+{#                               </div>#}
+{#                               <p class="groom-right text-left">velit sagittis vehicula. Duis posuere#}
+{#                                  ex in mollis iaculis. Suspendisse tincidunt ut velit id euismod.vulputate turpis porta#}
+{#                               </p>#}
+{#                            </div>#}
+{#                         </div>#}
+{#                      </div>#}
+{#                   </div>#}
+{#                </div>#}
+{#                <div class="row blog-top-grids">#}
+{#                   <div class="col-lg-6 left-side-agile mb-3">#}
+{#                      <div class="least-w3layouts-text-gap">#}
+{#                         <div class="row py-3">#}
+{#                            <div class=" col-md-4 col-sm-4 news-img">#}
+{#                               <img src="static/images/l3.jpg" alt="" class="image-fluid">#}
+{#                            </div>#}
+{#                            <div class=" col-md-8 col-sm-8 news-agile-text ">#}
+{#                               <h4>Lorem ipsum dolor sit amet, consectetur#}
+{#                               </h4>#}
+{#                               <div class="news-date my-3">#}
+{#                                  <ul>#}
+{#                                     <li><span class="far fa-calendar-check" ></span><a href="#">12/4/2019</a></li>#}
+{#                                     <li><span class="fas fa-tags"></span><a href="#">5 Tags</a></li>#}
+{#                                     <li><span class="far fa-comments"></span><a href="#">5 Comments</a></li>#}
+{#                                  </ul>#}
+{#                               </div>#}
+{#                               <p class="groom-right text-left">velit sagittis vehicula. Duis posuere#}
+{#                                  ex in mollis iaculis. Suspendisse tincidunt ut velit id euismod.vulputate turpis porta#}
+{#                               </p>#}
+{#                            </div>#}
+{#                         </div>#}
+{#                      </div>#}
+{#                   </div>#}
+{#                   <div class="col-lg-6 left-side-agile">#}
+{#                      <div class="least-w3layouts-text-gap">#}
+{#                         <div class="row py-3">#}
+{#                            <div class=" col-md-4 col-sm-4 news-img">#}
+{#                               <img src="static/images/l4.jpg" alt="" class="image-fluid">#}
+{#                            </div>#}
+{#                            <div class=" col-md-8 col-sm-8 news-agile-text ">#}
+{#                               <h4>Lorem ipsum dolor sit amet, consectetur#}
+{#                               </h4>#}
+{#                               <div class="news-date my-3">#}
+{#                                  <ul>#}
+{#                                     <li><span class="far fa-calendar-check" ></span><a href="#">12/4/2019</a></li>#}
+{#                                     <li><span class="fas fa-tags"></span><a href="#">5 Tags</a></li>#}
+{#                                     <li><span class="far fa-comments"></span><a href="#">5 Comments</a></li>#}
+{#                                  </ul>#}
+{#                               </div>#}
+{#                               <p class="groom-right text-left">velit sagittis vehicula. Duis posuere#}
+{#                                  ex in mollis iaculis. Suspendisse tincidunt ut velit id euismod.vulputate turpis porta#}
+{#                               </p>#}
+{#                            </div>#}
+{#                         </div>#}
+{#                      </div>#}
+{#                   </div>#}
+{#                </div>#}
+{#             </div>#}
+{#          </section>#}
+{#          <!--latest news-->#}
+{##}
+{##}
+{##}
 
 
 

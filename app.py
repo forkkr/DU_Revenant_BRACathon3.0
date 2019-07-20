@@ -6,6 +6,7 @@ from services import auth
 app = Flask(__name__)
 app.secret_key = "moonmuniakashob"
 
+
 @app.route('/home')
 def home():
     print(session['username'])
@@ -28,7 +29,7 @@ def validation_login_info():
         if flag == False:
             return redirect('/')
     session['username'] = user['username']
-    return render_template('index.html', **locals())
+    return redirect('/')
 
 
 @app.route("/logout")
@@ -36,6 +37,7 @@ def logout():
     if 'username' in session.keys():
         session.pop('username')
     return redirect('/')
+
 
 @app.route('/register')
 def register():
@@ -142,8 +144,17 @@ def response_analysis(report_id):
 
 @app.route('/data-analysis', methods=['POST', 'GET'])
 def data_analysis():
-    return render_template('responses_analysis.html')
+    return render_template('analysis_categories.html')
 
+
+@app.route('/correlation-graph', methods=['POST', 'GET'])
+def correlation_graph():
+    return render_template('correlation_graph.html')
+
+
+@app.route('/trend-analysis', methods=['POST', 'GET'])
+def trend_analysis():
+    return render_template('trend_analysis.html')
 
 if __name__ == '__main__':
     app.run()
