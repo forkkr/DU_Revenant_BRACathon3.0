@@ -134,12 +134,17 @@ def report_submit_done(report_id):
 
 @app.route('/responses-view/<report_id>', methods=['POST', 'GET'])
 def response_view(report_id):
-    return render_template('responses_view.html')
+    return render_template('responses_view.html', **locals())
 
 
 @app.route('/responses-analysis/<report_id>', methods=['POST', 'GET'])
 def response_analysis(report_id):
-    return render_template('responses_analysis.html')
+    return render_template('response_analysis_categories.html', **locals())
+
+
+@app.route('/responses-analysis-summarization/<report_id>', methods=['POST', 'GET'])
+def response_analysis_summarization(report_id):
+    return render_template('responses_analysis.html', **locals())
 
 
 @app.route('/data-analysis', methods=['POST', 'GET'])
@@ -166,6 +171,19 @@ def prediction():
 def send_report_done(report_id):
     print(report_id, ' : sent_reportId')
     return redirect('/home')
+
+
+@app.route('/correlation-graph-category')
+def correlation_graph_category():
+    # print(report_id, ' : sent_reportId')
+    report_id = None
+    return render_template('correlation_graph_categories.html', **locals())
+
+
+@app.route('/analysis-correlation-graph-category')
+def analysis_correlation_graph_category():
+    # print(report_id, ' : sent_reportId')
+    return render_template('analysis_correlation_graph_category.html')
 
 
 
