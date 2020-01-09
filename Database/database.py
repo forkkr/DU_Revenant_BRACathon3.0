@@ -12,7 +12,7 @@ class Database:
         if online:
             MONGODB_URI = "mongodb://csclassroomfeed:mlab123@ds231643.mlab.com:31643/upgbrac"
 
-            client = MongoClient(MONGODB_URI, connectTimeoutMS=30000)
+            client = MongoClient(MONGODB_URI, connectTimeoutMS=30000, retryWrites=False)
             self.db = client.get_database("upgbrac")
         else:
             client = MongoClient('localhost', 27017)

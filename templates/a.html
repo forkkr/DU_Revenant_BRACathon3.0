@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UPG BRAC</title>
+</head>
+<body>
+
+{% block navbar %}
+    {% include "nav.html" %}
+{% endblock %}
+
+ <div class="container" >
+
+<form id="form" action="/report-generation-done/{{ report_id }}" method="POST">
+
+     <div class="form-group " align="center">
+        <label style="font-size: xx-large; " for="reportName">Report Name</label>
+        <input  style="font-size:20px; margin-bottom: 30px;" type="text" class="form-control" aria-label="Large" id="reportName" name="reportName" >
+    </div>
+    <div id = "questions">
+        <div id="group1" class="form-row">
+        <div class="form-group col-md-8">
+          <label for="q1">Question 1</label>
+          <input type="text" class="form-control" id="q1" name="q1">
+        </div>
+        <div class="form-group col-md-2">
+          <label for="type1" >Answer type</label>
+          <select id="type1" name="type1" class="form-control">
+            <option selected>Number</option>
+            <option>Text</option>
+            <option>Multiple Choice</option>
+            <option>Check box</option>
+            <option>Short Answer</option>
+            <option>Paragraph</option>
+            <option>File Uploada</option>
+          </select>
+        </div>
+        <div style="padding-top: 30px" class="form-group col-md-2">
+          <button style="margin-left: 20px" onclick="removeElement(id)" id="0" name="0" type="button" class="btn btn-primary">Remove</button>
+        </div>
+    </div>
+    </div>
+
+
+    <div>
+        <button  id="btn" name="btn" type="button" class="btn btn-success">Add Question</button>
+    </div>
+    <div>
+        <input style="margin-left: 40%; margin-top: 20px; margin-bottom: 100px" type="submit" class="btn btn-primary btn-lg btn-bloc" value="Submit">
+{#        Submit</input>#}
+    </div>
+
+{#  <input type="submit" value="Submit">#}
+
+</form>
+
+
+
+
+
+ </div>
+{% include 'footer.html' %}
+</body>
+</html>

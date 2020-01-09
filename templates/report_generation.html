@@ -1,116 +1,222 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>UPG BRAC</title>
-</head>
-<body>
- {% include 'nav.html' %}
-Design Your Report Template..
-<script src="static/js/jquery-2.2.3.min.js"></script>
- <div class="container"  style="margin-top: 100px;">
+{% extends "page_layout.html" %}
+
+{% block body %}
+<div class="container-fluid " >
 
 <form id="form" action="/report-generation-done/{{ report_id }}" method="POST">
 
-     <div class="form-group " align="center">
-        <label style="font-size: xx-large; " for="reportName">Report Name</label>
-        <input  style="font-size:20px; margin-bottom: 30px;" type="text" class="form-control" aria-label="Large" id="reportName" name="reportName" >
-    </div>
-    <div id = "questions">
-        <div id="group1" class="form-row">
-        <div class="form-group col-md-8">
-          <label for="q1">Question 1</label>
-          <input type="text" class="form-control" id="q1" name="q1">
-        </div>
-        <div class="form-group col-md-2">
-          <label for="type1" >Answer type</label>
-          <select id="type1" name="type1" class="form-control">
-            <option selected>Number</option>
-            <option>Text</option>
-            <option>Multiple Choice</option>
-            <option>Check box</option>
-            <option>Short Answer</option>
-            <option>Paragraph</option>
-            <option>File Upload</option>
-          </select>
-        </div>
-        <div style="padding-top: 30px" class="form-group col-md-2">
-          <button style="margin-left: 20px" onclick="removeElement(id)" id="0" name="0" type="button" class="btn btn-primary">Remove</button>
+    <div class="container-fluid p-lg-4 bg-info">
+
+        <div class="input-group input-group-lg">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-lg">Report Name</span>
+          </div>
+          <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
         </div>
     </div>
-    </div>
+
+    <div class="row p-lg-4 bg-light">
+        <div class="col-md-3 order-md-1 mb-4">
+          <h5 class="d-flex justify-content-between align-items-center mb-2">
+            <span class="text-muted">Add Prev Questions</span>
+          </h5>
+          <ul class="list-group mb-2">
+            <li type="button" class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Question 1</h6>
+                <small class="text-muted">Type: Number</small>
+              </div>
+
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Question 2</h6>
+                <small class="text-muted">Brief description</small>
+              </div>
+
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Question 3</h6>
+                <small class="text-muted">Brief description</small>
+              </div>
+
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Question 4</h6>
+                <small class="text-muted">Brief description</small>
+              </div>
+
+            </li>
+
+          </ul>
 
 
-    <div>
-        <button  id="btn" name="btn" type="button" class="btn btn-success">Add Question</button>
-    </div>
-    <div>
-        <input style="margin-left: 40%; margin-top: 20px; margin-bottom: 100px" type="submit" class="btn btn-primary btn-lg btn-bloc" value="Submit">
-{#        Submit</input>#}
-    </div>
+        </div>
 
-{#  <input type="submit" value="Submit">#}
+
+        <div id = "questions" class="col-md-9 order-md-2" >
+
+            <div class="row">
+                <div class="mb-3">
+                    <button  id="btn" name="btn" type="button" class="btn btn-info ">Add New Question</button>
+                </div>
+                <div class="mb-3">
+                    <button  id="submitButton" name="submitButton"class="btn btn-success ">Submit</button>
+                </div>
+            </div>
+            <div id = "card1" class="card-body bg-white" >
+                <div id="group1" class="form-row">
+                    <div class="form-group col-md-7">
+                      <label for="q1">Question </label>
+                      <input type="text" class="form-control border-primary " id="q1" name="q1">
+                        <div id="choice_option" class="p-3 ">
+
+                        </div>
+                    </div>
+                    <div class="form-group col-md-2">
+                      <label for="type1" >Answer type</label>
+                      <select id="type1" name="type1" onchange="add_choice(this.value)" class="form-control border-primary">
+                        <option selected>Number</option>
+                        <option>Text</option>
+                        <option value="mc">Multiple Choice</option>
+                        <option value="cb">Check box</option>
+                        <option>Short Answer</option>
+                        <option>Percentage</option>
+                        <option>File Upload</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group col-md-2">
+                      <label for="type2" >Analysis type</label>
+                      <select id="type2" name="type1" class="form-control border-primary">
+                        <option selected>Graph</option>
+                        <option>Bar-Chart</option>
+                        <option>Pie-Chart</option>
+                      </select>
+                    </div>
+                    <div  class="form-group col-md-1" >
+                        <label style="color: white" > m</label>
+                      <button onclick="removeElement(id)" id="0" name="0" type="button" class="btn btn-outline-danger">Remove</button>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+
+    </div>
 
 </form>
-
-
-
 
     <script>
 
         var count=2;
         $("#btn").click(function(){
 
-          $("#questions").append(addNewRow(count));
+          $("#questions").append(addNewRow());
           count++;
         });
 
-        function addNewRow(count){
+        function addNewRow(){
             var idd = "group"+count;
-            var newrow= '<div id="' + idd +' " class="form-row">'+
-                '<div class="form-group col-md-8">'+
-                 '<label for="inputCity">Question '+ count +'</label>'+
-                  '<input type="text" class="form-control" id="q' + count + '" name="q' + count + '">'+
-                '</div>'+
-                '<div class="form-group col-md-2">'+
-                  '<label for="type' + count+'">Answer type</label>'+
-                  '<select id="type' + count +'" name="type' + count +'" class="form-control">'+
-                   ' <option selected>Number</option>'+
-                    '<option>Text</option>'+
-                  '</select>'+
-                '</div>'+
-                 ' <div style="padding-top: 30px" class="form-group col-md-2">' +
-                    '<button style="margin-left: 20px" id="'+ count +'" name="'+ count +'" onclick="removeElement(id)" type="button" class="btn btn-primary">Remove</button>' +
-                  '</div>' +
-              '</div>';
+            var newrow= '<div id = "card1" class="card-body bg-white" >\n' +
+                '                <div id="group1" class="form-row">\n' +
+                '                    <div class="form-group col-md-7">\n' +
+                '                      <label for="q1">Question </label>\n' +
+                '                      <input type="text" class="form-control border-primary " id="q1" name="q1">\n' +
+                '                        <div id="choice_option" class="p-3 ">\n' +
+                '\n' +
+                '                        </div>\n' +
+                '                    </div>\n' +
+                '                    <div class="form-group col-md-2">\n' +
+                '                      <label for="type1" >Answer type</label>\n' +
+                '                      <select id="type1" name="type1" onchange="add_choice(this.value)" class="form-control border-primary">\n' +
+                '                        <option selected>Number</option>\n' +
+                '                        <option>Text</option>\n' +
+                '                        <option value="mc">Multiple Choice</option>\n' +
+                '                        <option value="cb">Check box</option>\n' +
+                '                        <option>Short Answer</option>\n' +
+                '                        <option>Percentage</option>\n' +
+                '                        <option>File Upload</option>\n' +
+                '                      </select>\n' +
+                '                    </div>\n' +
+                '\n' +
+                '                    <div class="form-group col-md-2">\n' +
+                '                      <label for="type2" >Analysis type</label>\n' +
+                '                      <select id="type2" name="type1" class="form-control border-primary">\n' +
+                '                        <option selected>Graph</option>\n' +
+                '                        <option>Bar-Chart</option>\n' +
+                '                        <option>Pie-Chart</option>\n' +
+                '                      </select>\n' +
+                '                    </div>\n' +
+                '                    <div  class="form-group col-md-1" >\n' +
+                '                        <label style="color: white" > m</label>\n' +
+                '                      <button onclick="removeElement(id)" id="0" name="0" type="button" class="btn btn-outline-danger">Remove</button>\n' +
+                '                    </div>\n' +
+                '                </div>\n' +
+                '\n' +
+                '\n' +
+                '            </div>';
           return newrow;
         }
+
+        function add_choice(value){
+            console.log(value)
+            if (value !="mc" && value != "cb"){
+                document.getElementById("choice_option").innerHTML = "";
+                return;
+            }
+            document.getElementById("choice_option").innerHTML = "";
+            var card_html = document.getElementById("choice_option");
+            var objNewDiv = document.createElement('div');
+            objNewDiv.setAttribute('id', 'add_div');
+            objNewDiv.innerHTML = '<input type="button" onclick="add_choice_option()" id="add" name="add"class="btn btn-a" value="Add Option">'
+                                    + '<input type="button" onclick="remove_choice_option()" id="remove" name="remove"class="btn btn-a" value="Remove Option">';
+            var new_html = '  ';
+
+            card_html.appendChild(objNewDiv);
+        }
+
+
+        //Counter to maintain number of Optiones and give them unique id for later reference
+        var intOption = 0;
+
+        /**
+        * Function to add Option element dynamically
+        * First we incrementing the counter and creating new div element with unique id
+        * Then adding new Option element to this div and finally appending this div to main content.
+        */
+        function add_choice_option() {
+            intOption++;
+            var objNewDiv = document.createElement('div');
+            objNewDiv.setAttribute('id', 'div_' + intOption);
+            objNewDiv.setAttribute('class', 'p-2' );
+            objNewDiv.innerHTML = 'Option ' + intOption + ': <input type="text" id="tb_' + intOption + '" name="tb_' + intOption + '"/>';
+            document.getElementById('choice_option').appendChild(objNewDiv);
+        }
+
+        /**
+        * Function to remove Option element dynamically
+        * check if counter is more than zero then remove the div element with the counter id and reduce the counter
+        * if counter is zero then show alert as no existing Optiones are there
+        */
+        function remove_choice_option() {
+            if(0 < intOption) {
+                document.getElementById('choice_option').removeChild(document.getElementById('div_' + intOption));
+                intOption--;
+            } else {
+                alert("No Option to remove");
+            }
+        }
+
+
+
     </script>
 
-<div  id="reqs">
-{#<h3 align = "center"> Requirements </h3>#}
-<script>
-    var reqs_id = 0;
-    function removeElement(elementId) {
-        // Removes an element from the document
-        var idd = "group"+ elementId;
-        var element = document.getElementById(idd);
-        console.log(elementId);
-        //var element = document.getElementById(elementId);
-        console.log(element);
-        //element2.parentNode.removeChild(element2);
-        element.parentNode.removeChild(element);
-    }
-</script>
-{#<button type="button" value="Add" onclick="javascript:add();"> Add</button>#}
 
-{#<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>#}
-{#<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>#}
-{#<script type="text/JavaScript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js" ></script>#}
-{# <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>#}
 
-</div>
  </div>
-{% include 'footer.html' %}
-</body>
-</html>
+{% endblock %}
