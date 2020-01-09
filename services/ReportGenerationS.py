@@ -1,3 +1,4 @@
+
 from bson import ObjectId
 from Database.database import db
 
@@ -10,7 +11,9 @@ def report_generation():
 
 
 def add_questions(report_id, data):
+    print("Data: ", data)
     report = db.reports.find_one({'_id': ObjectId(report_id)})
+    print('Hereree', report)
     report['name'] = data['reportName']
     question_dic = report['questions']
     cnt = 1
@@ -23,10 +26,11 @@ def add_questions(report_id, data):
                 question_dic[qu] = {}
             ky = dt
             question_dic[qu][dt] = data[dt]
-
+    print(report)
     report['questions'] = question_dic
     # db.course_users.replace_one({'username': session['username']}, user)
     db.reports.replace_one({'_id': ObjectId(report_id)}, report)
+    print('submission dome')
     return
 
 

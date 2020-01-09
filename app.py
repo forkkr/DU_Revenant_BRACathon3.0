@@ -88,6 +88,7 @@ def report_generation_done(report_id):
     # print(request.form)
     if request.method == "POST":
         data = request.form
+        print(data)
         RGS.add_questions(report_id, data)
     # report_id = RGS.report_generation()
     return render_template('report_share.html', **locals())
