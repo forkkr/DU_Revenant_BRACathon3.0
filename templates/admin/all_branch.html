@@ -3,87 +3,138 @@
 <div align="center">
     <div style="width: 80% ; margin-bottom: 100px" >
         <br/>
-        <h2>Current Branch List</h2>
+        <h2>Branch List</h2>
         <br/>
 
-        <form action = "/admin/all-employee" method = "POST" style="width: 60%">
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
 
-        <div class="form-group">
-          <label for="brac_id">BRAC Employee ID</label>
-          <input type="text" class="form-control" id="brac_id" placeholder="BRAC Employee ID" name="brac_id" required>
+<table id="myTable">
+  <tr class="header">
+    <th style="width:20%;">Branch Name</th>
+    <th style="width:15%;">Address</th>
+    <th style="width:20%;">Current BM</th>
+    <th style="width:15%;">Region</th>
+    <th style="width:15%;">Zone</th>
+{#     <th style="width:15%;">Phone Number</th> #}
+  </tr>
+  <tr>
+    <td>Manikganj-1</td>
+      <td>Ghatail, Manikganj</td>
+      <td>AAA BC D</td>
+      <td>Dhaka-1</td>
+      <td>Dhaka</td>
+  </tr>
+  <tr>
+    <td>Munshiganj-2</td>
+      <td>XYZ, Munshiganj</td>
+      <td>AKM ZH</td>
+      <td>Dhaka-2</td>
+      <td>Dhaka</td>
+  </tr>
+  <tr>
+    <td>Kishoregan-1</td>
+      <td>Pakundia, Kishoreganj</td>
+      <td>BCD HM</td>
+      <td>Dhaka-3</td>
+      <td>Dhaka</td>
+  </tr>
+  <tr>
+    <td>Koniglich Essen</td>
+      <td>101420</td>
+    <td>Germany</td>
+      <td>017111222123</td>
+  </tr>
+  <tr>
+    <td>Laughing Bacchus Winecellars</td>
+      <td>101520</td>
+    <td>Canada</td>
+      <td>017111222123</td>
+  </tr>
+  <tr>
+    <td>Magazzini Alimentari Riuniti</td>
+      <td>111320</td>
+    <td>Italy</td>
+      <td>017111222123</td>
+  </tr>
+  <tr>
+    <td>North/South</td>
+      <td>105320</td>
+    <td>UK</td>
+      <td>017111222123</td>
+  </tr>
+  <tr>
+    <td>Paris specialites</td>
+      <td>101329</td>
+    <td>France</td>
+      <td>017111222123</td>
+  </tr>
+</table>
 
-        </div>
 
-            <span> Or</span>
-
-         <div class="form-group">
-          <label for="uname">Employee Name</label>
-          <input type="text" class="form-control" id="uname" placeholder="Full Name" name="uname" required>
-        </div>
-
-            <button type="button" class="btn btn-info" style="margin: 20px">Search</button>
-
-        <div class="card" style="margin-bottom: 30px">
-          <div class="card-header">Current Job Information</div>
-          <div class="card-body">
-
-              <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">Post</span>
-                </div>
-                  <output type="text" class="form-control"> Branch Manager </output>
-              </div>
-
-            <div class="input-group mb-3" >
-                <div class="input-group-prepend">
-                  <span class="input-group-text">Branch</span>
-                </div>
-                  <output type="text" class="form-control"> Manikganj </output>
-              </div>
-
-          </div>
-          <div class="card-footer">Last Update: January 10, 2020</div>
-        </div>
-
-        <div class="form-group">
-            <label for="occupation">Assign Post</label>
-            <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="occupation" name="occupation">
-                <option selected>Choose...</option>
-                <option value="1">Head Office User</option>
-                <option value="2">Branch Manager</option>
-                <option value="3">Quality Controller</option>
-                <option value="4">Regional Manager</option>
-                <option value="5">Program Officer</option>
-
-            </select>
-            <span id="occupation_msg" style="font-size: small;color: red"></span>
-        </div>
-
-            <div class="form-group">
-            <label for="occupation">Select Branch</label>
-            <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="occupation" name="occupation">
-                <option selected>Choose...</option>
-                <option value="1">Branch 1</option>
-                <option value="2">Branch 2</option>
-                <option value="3">Branch 3</option>
-                <option value="4">Branch 4</option>
-                <option value="5">Branch 5</option>
-
-            </select>
-            <span id="occupation_msg" style="font-size: small;color: red"></span>
-        </div>
-
-            <div class="form-group">
-                <label class="form-check-label">
-                    <input class="form-check-input" type="checkbox" id="terms" name="terms" required> I have double-checked these information
-                </label><br/>
-                <span id="terms_msg" style="font-size: small;color: red"></span>
-            </div>
-
-            <div class="form-group">
-                <input type="submit" class="btn btn-dark btn-lg" value="Save">
-            </div>
-        </form>
     </div>
 </div>
+
+
+{#    Test#}
+<style>
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myTable {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 18px;
+}
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+}
+
+#myTable tr {
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  background-color: #f1f1f1;
+}
+</style>
+
+
+
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>
+
+
 {% endblock %}
