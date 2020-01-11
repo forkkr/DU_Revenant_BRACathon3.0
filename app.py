@@ -246,6 +246,10 @@ def view_all_branch():
 def head_office_dashboard():
     return render_template('HO_dashboard.html')
 
+@app.route('/branch-manager-dashboard')
+def branch_manager_dashboard():
+    return render_template('BM_dashboard.html')
+
 ##################
 
 if __name__ == '__main__':
