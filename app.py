@@ -4,21 +4,41 @@ from services import ReportGenerationS as RGS
 from classes import ReportGenerationClass as RGC
 from services import auth
 
+#paths
+
+from paths.auth import app as auth_app
+from paths.admin.admin_path import app as admin_app
+from paths.head.head_path import app as head_app
+
+
 app = Flask(__name__)
 app.secret_key = "moonmuniakashob"
 
-
-@app.route('/home')
-def home():
-    print(session['username'])
-    return render_template('index.html', **locals())
+# app register
+app.register_blueprint(auth_app)
+app.register_blueprint(admin_app)
+app.register_blueprint(head_app)
 
 
 @app.route('/')
-def login(data=None):
-    if 'username' in session.keys():
-        return redirect('/home')
-    return render_template('login.html', **locals())
+def home():
+    return redirect('/auth/home')
+
+
+
+# @app.route('/home')
+# def home():
+#     print(session['username'])
+#     return render_template('index.html', **locals())
+#
+#
+#
+#
+# @app.route('/')
+# def login(data=None):
+#     if 'username' in session.keys():
+#         return redirect('/home')
+#     return render_template('login.html', **locals())
 
 
 @app.route('/validation-login-info', methods=['POST', 'GET'])
@@ -30,13 +50,6 @@ def validation_login_info():
         if flag == False:
             return redirect('/')
     session['username'] = user['username']
-    return redirect('/')
-
-
-@app.route("/logout")
-def logout():
-    if 'username' in session.keys():
-        session.pop('username')
     return redirect('/')
 
 
@@ -195,13 +208,13 @@ def test():
 
 @app.route('/admin', methods=['POST', 'GET'])
 def admin_test():
-    return render_template('admin/adminHome.html')
+    return render_template('admin/admin_home.html')
 
 
 @app.route('/addingNewEmp', methods=['POST', 'GET'])
 def add_employee():
     print('Adding Employee')
-    return render_template('admin/adminHome.html')
+    return render_template('admin/admin_home.html')
 
 
 @app.route('/addingNewBranch', methods=['POST', 'GET'])
