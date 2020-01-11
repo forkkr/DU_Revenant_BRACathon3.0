@@ -2,81 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="356076e0-5c6a-478c-97cd-6bb5d28eba17" name="Default Changelist" comment="new_version_1">
-      <change beforePath="$PROJECT_DIR$/.idea/DU_Revenant_UPG.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DU_Revenant_UPG.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/rSettings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/add_branch.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/add_branch.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/all_branch.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/all_branch.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/all_employee.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/all_employee.html" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/venv/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/DU_Revenant_UPG$DU_Revenant_UPG.coverage" NAME="DU_Revenant_UPG Coverage Results" MODIFIED="1570941467137" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/DU_Revenant_UPG$test.coverage" NAME="test Coverage Results" MODIFIED="1563519563865" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/DU_Revenant_UPG$DU_Revenant_UPG.coverage" NAME="DU_Revenant_UPG Coverage Results" MODIFIED="1578771170834" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" selection-start-line="21" selection-end-line="21" />
-              <folding>
-                <element signature="e#0#68#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/admin/all_employee.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="44" column="21" selection-start-line="44" selection-start-column="21" selection-end-line="44" selection-end-column="21" />
-              <folding>
-                <element signature="e#87#128#0#HTML" expanded="true" />
-                <element signature="e#402#420#0#HTML" expanded="true" />
-                <element signature="e#439#457#0#HTML" expanded="true" />
-                <element signature="e#461#479#0#HTML" expanded="true" />
-                <element signature="e#499#517#0#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/admin/all_branch.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="22" column="23" lean-forward="true" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
-              <folding>
-                <element signature="e#87#128#0#HTML" expanded="true" />
-                <element signature="e#363#381#0#HTML" expanded="true" />
-                <element signature="e#409#427#0#HTML" expanded="true" />
-                <element signature="e#458#476#0#HTML" expanded="true" />
-                <element signature="e#497#515#0#HTML" expanded="true" />
-                <element signature="e#521#539#0#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/admin/add_branch.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="30" column="43" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -89,52 +26,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/templates/admin/all_employee.html" />
-        <option value="$PROJECT_DIR$/templates/admin/all_branch.html" />
-        <option value="$PROJECT_DIR$/templates/admin/add_branch.html" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="854" />
-    <option name="y" value="98" />
-    <option name="width" value="442" />
-    <option name="height" value="670" />
-  </component>
   <component name="ProjectId" id="1VhfSFFTfFYn2PghqfeErwedKc1" />
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="DU_Revenant_UPG" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DU_Revenant_UPG" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DU_Revenant_UPG" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DU_Revenant_UPG" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DU_Revenant_UPG" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DU_Revenant_UPG" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
-  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -159,18 +51,6 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/templates" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="Flask server.DU_Revenant_UPG">
     <configuration name="report_analysis.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/DU_Revenant_UPG/templates/report_analysis.html">
@@ -198,13 +78,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="DU_Revenant_UPG" type="Python.FlaskServer" factoryName="Flask server">
+    <configuration name="DU_Revenant_UPG" type="Python.FlaskServer">
       <module name="DU_Revenant_UPG" />
       <option name="target" value="$PROJECT_DIR$/app.py" />
       <option name="targetType" value="PATH" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -253,9 +133,7 @@
       <workItem from="1578049065468" duration="20032000" />
       <workItem from="1578149686667" duration="632000" />
       <workItem from="1578548689005" duration="2631000" />
-      <workItem from="1578560863781" duration="1254000" />
-      <workItem from="1578725243923" duration="1856000" />
-      <workItem from="1578756492398" duration="4905000" />
+      <workItem from="1578779160334" duration="465000" />
     </task>
     <task id="LOCAL-00001" summary="white   brac">
       <created>1563448616144</created>
@@ -299,38 +177,15 @@
       <option name="project" value="LOCAL" />
       <updated>1563607883859</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="notification and bm-dashboard">
+      <created>1578779420553</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1578779420553</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8015000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="49" y="25" width="1317" height="743" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25727773" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.29478827" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32899022" />
-      <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" />
-      <window_info anchor="bottom" id="Python Console" order="12" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" />
-      <window_info anchor="right" id="Database" order="4" />
-    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -341,28 +196,8 @@
         <entry key="MAIN">
           <value>
             <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
               <option name="COLUMN_ORDER" />
             </State>
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="RECENT_FILTERS">
-      <map>
-        <entry key="Branch">
-          <value>
-            <list />
-          </value>
-        </entry>
-        <entry key="User">
-          <value>
-            <list />
           </value>
         </entry>
       </map>
@@ -376,91 +211,66 @@
     <MESSAGE value="munia v1.4" />
     <MESSAGE value="munia v1.5" />
     <MESSAGE value="new_version_1" />
-    <option name="LAST_COMMIT_MESSAGE" value="new_version_1" />
+    <MESSAGE value="notification and bm-dashboard" />
+    <option name="LAST_COMMIT_MESSAGE" value="notification and bm-dashboard" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="307" y="0" key="CommitChangelistDialog2" timestamp="1578551836225">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="357" y="27" width="642" height="741" key="#DU_Revenant_UPG" timestamp="1578779176245">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="357" y="27" width="642" height="741" key="#DU_Revenant_UPG/0.27.1366.741@0.27.1366.741" timestamp="1578779176245" />
+    <state x="307" y="27" width="860" height="741" key="CommitChangelistDialog2" timestamp="1578779420310">
+      <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="307" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1578551836225" />
+    <state x="307" y="27" width="860" height="741" key="CommitChangelistDialog2/0.27.1366.741@0.27.1366.741" timestamp="1578779420310" />
     <state x="463" y="120" key="FileChooserDialogImpl" timestamp="1577985773649">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1577985773649" />
-    <state width="1323" height="178" key="GridCell.Tab.0.bottom" timestamp="1578549402320">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="660" height="237" key="GridCell.Tab.0.bottom" timestamp="1578779673603">
+      <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state width="1323" height="178" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1578549402320" />
-    <state width="1323" height="178" key="GridCell.Tab.0.center" timestamp="1578549402318">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="660" height="237" key="GridCell.Tab.0.bottom/0.27.1366.741@0.27.1366.741" timestamp="1578779673603" />
+    <state width="660" height="237" key="GridCell.Tab.0.center" timestamp="1578779673601">
+      <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state width="1323" height="178" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1578549402318" />
-    <state width="1323" height="178" key="GridCell.Tab.0.left" timestamp="1578549402318">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="660" height="237" key="GridCell.Tab.0.center/0.27.1366.741@0.27.1366.741" timestamp="1578779673601" />
+    <state width="660" height="237" key="GridCell.Tab.0.left" timestamp="1578779673600">
+      <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state width="1323" height="178" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1578549402318" />
-    <state width="1323" height="178" key="GridCell.Tab.0.right" timestamp="1578549402318">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="660" height="237" key="GridCell.Tab.0.left/0.27.1366.741@0.27.1366.741" timestamp="1578779673600" />
+    <state width="660" height="237" key="GridCell.Tab.0.right" timestamp="1578779673602">
+      <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state width="1323" height="178" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1578549402318" />
-    <state x="186" y="10" key="SettingsEditor" timestamp="1577978350475">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="660" height="237" key="GridCell.Tab.0.right/0.27.1366.741@0.27.1366.741" timestamp="1578779673602" />
+    <state x="388" y="114" width="580" height="564" key="MultipleFileMergeDialog" timestamp="1578779471290">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="388" y="114" width="580" height="564" key="MultipleFileMergeDialog/0.27.1366.741@0.27.1366.741" timestamp="1578779471290" />
+    <state x="186" y="37" key="SettingsEditor" timestamp="1578779624430">
+      <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="186" y="10" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1577978350475" />
+    <state x="186" y="37" key="SettingsEditor/0.27.1366.741@0.27.1366.741" timestamp="1578779624430" />
+    <state x="278" y="132" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1578779432743">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="278" y="132" width="800" height="528" key="Vcs.Push.Dialog.v2/0.27.1366.741@0.27.1366.741" timestamp="1578779432743" />
     <state x="391" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1578548697955">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="391" y="193" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1578548697955" />
+    <state x="339" y="190" width="678" height="413" key="git4idea.merge.GitPullDialog" timestamp="1578779186391">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="339" y="190" width="678" height="413" key="git4idea.merge.GitPullDialog/0.27.1366.741@0.27.1366.741" timestamp="1578779186391" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/DU_Revenant_UPG$DU_Revenant_UPG.coverage" NAME="DU_Revenant_UPG Coverage Results" MODIFIED="1578549402297" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-          <folding>
-            <element signature="e#0#68#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/admin/all_employee.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="44" column="21" selection-start-line="44" selection-start-column="21" selection-end-line="44" selection-end-column="21" />
-          <folding>
-            <element signature="e#87#128#0#HTML" expanded="true" />
-            <element signature="e#402#420#0#HTML" expanded="true" />
-            <element signature="e#439#457#0#HTML" expanded="true" />
-            <element signature="e#461#479#0#HTML" expanded="true" />
-            <element signature="e#499#517#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/admin/all_branch.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="22" column="23" lean-forward="true" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
-          <folding>
-            <element signature="e#87#128#0#HTML" expanded="true" />
-            <element signature="e#363#381#0#HTML" expanded="true" />
-            <element signature="e#409#427#0#HTML" expanded="true" />
-            <element signature="e#458#476#0#HTML" expanded="true" />
-            <element signature="e#497#515#0#HTML" expanded="true" />
-            <element signature="e#521#539#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/admin/add_branch.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="30" column="43" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
+    <SUITE FILE_PATH="coverage/DU_Revenant_UPG$DU_Revenant_UPG.coverage" NAME="DU_Revenant_UPG Coverage Results" MODIFIED="1578779629039" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>
