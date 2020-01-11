@@ -227,6 +227,13 @@ def view_all_branch():
     # pass
     return render_template('admin/all_branch.html')
 
+###################
+
+@app.route('/head-office-dashboard')
+def head_office_dashboard():
+    return render_template('HO_dashboard.html')
+
+##################
 
 if __name__ == '__main__':
     app.run()

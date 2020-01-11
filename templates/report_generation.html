@@ -66,18 +66,20 @@
                     <button  id="submitButton" name="submitButton"class="btn btn-success ">Submit</button>
                 </div>
             </div>
-            <div id = "card1" class="card-body bg-white" >
+            <div id = "card_1" class="card-body bg-white" >
                 <div id="group1" class="form-row">
                     <div class="form-group col-md-7">
-                      <label for="q1">Question </label>
-                      <input type="text" class="form-control border-primary " id="q1" name="q1">
-                        <div id="choice_option" class="p-3 ">
+                      <label for="q_1">Question </label>
+                      <input type="text" class="form-control border-primary " id="q_1" name="q_1">
+                        <div id="choice_option_1" class="p-3 ">
+
+
 
                         </div>
                     </div>
                     <div class="form-group col-md-2">
-                      <label for="type1" >Answer type</label>
-                      <select id="type1" name="type1" onchange="add_choice(this.value)" class="form-control border-primary">
+                      <label for="qtype_1" >Answer type</label>
+                      <select id="qtype_1" name="qtype_1" onchange="add_choice(this.value,1)" class="form-control border-primary">
                         <option selected>Number</option>
                         <option>Text</option>
                         <option value="mc">Multiple Choice</option>
@@ -89,8 +91,8 @@
                     </div>
 
                     <div class="form-group col-md-2">
-                      <label for="type2" >Analysis type</label>
-                      <select id="type2" name="type2" class="form-control border-primary">
+                      <label for="atype_1" >Analysis type</label>
+                      <select id="atype_1" name="atype_1" class="form-control border-primary">
                         <option selected>Graph</option>
                         <option>Bar-Chart</option>
                         <option>Pie-Chart</option>
@@ -98,7 +100,7 @@
                     </div>
                     <div  class="form-group col-md-1" >
                         <label style="color: white" > m</label>
-                      <button onclick="removeElement(id)" id="0" name="0" type="button" class="btn btn-outline-danger">Remove</button>
+                      <button onclick="removeElement(id)" id="_1" name="_1" type="button" class="btn btn-outline-danger">Remove</button>
                     </div>
                 </div>
 
@@ -113,7 +115,7 @@
 
     <script>
 
-        var count=2;
+        var count=1;
         $("#btn").click(function(){
 
           $("#questions").append(addNewRow());
@@ -122,18 +124,18 @@
 
         function addNewRow(){
             var idd = "group"+count;
-            var newrow= '<div id = "card1" class="card-body bg-white" >\n' +
-                '                <div id="group1" class="form-row">\n' +
+            var newrow= '<div id = "card_' + count +'" class="card-body bg-white" >\n' +
+                '                <div id="group_' + count +'" class="form-row">\n' +
                 '                    <div class="form-group col-md-7">\n' +
-                '                      <label for="q1">Question </label>\n' +
-                '                      <input type="text" class="form-control border-primary " id="q1" name="q1">\n' +
-                '                        <div id="choice_option" class="p-3 ">\n' +
+                '                      <label for="q_' + count +'">Question </label>\n' +
+                '                      <input type="text" class="form-control border-primary " id="q_' + count +'" name="q_' + count +'">\n' +
+                '                        <div id="choice_option_' + count +'" class="p-3 ">\n' +
                 '\n' +
                 '                        </div>\n' +
                 '                    </div>\n' +
                 '                    <div class="form-group col-md-2">\n' +
-                '                      <label for="type1" >Answer type</label>\n' +
-                '                      <select id="type1" name="type1" onchange="add_choice(this.value)" class="form-control border-primary">\n' +
+                '                      <label for="qtype_' + count +'" >Answer type</label>\n' +
+                '                      <select id="qtype_' + count +'" name="qtype_' + count +'" onchange="add_choice(this.value,'+count+')" class="form-control border-primary">\n' +
                 '                        <option selected>Number</option>\n' +
                 '                        <option>Text</option>\n' +
                 '                        <option value="mc">Multiple Choice</option>\n' +
@@ -145,8 +147,8 @@
                 '                    </div>\n' +
                 '\n' +
                 '                    <div class="form-group col-md-2">\n' +
-                '                      <label for="type2" >Analysis type</label>\n' +
-                '                      <select id="type2" name="type1" class="form-control border-primary">\n' +
+                '                      <label for="atype_' + count +'" >Analysis type</label>\n' +
+                '                      <select id="atype_' + count +'" name="atype_' + count +'" class="form-control border-primary">\n' +
                 '                        <option selected>Graph</option>\n' +
                 '                        <option>Bar-Chart</option>\n' +
                 '                        <option>Pie-Chart</option>\n' +
@@ -154,7 +156,7 @@
                 '                    </div>\n' +
                 '                    <div  class="form-group col-md-1" >\n' +
                 '                        <label style="color: white" > m</label>\n' +
-                '                      <button onclick="removeElement(id)" id="0" name="0" type="button" class="btn btn-outline-danger">Remove</button>\n' +
+                '                      <button onclick="removeElement(id)" id="_' + count +'" name="_' + count +'" type="button" class="btn btn-outline-danger">Remove</button>\n' +
                 '                    </div>\n' +
                 '                </div>\n' +
                 '\n' +
@@ -163,21 +165,28 @@
           return newrow;
         }
 
-        function add_choice(value){
+        function add_choice(value, num){
             console.log(value)
             if (value !="mc" && value != "cb"){
-                document.getElementById("choice_option").innerHTML = "";
+                document.getElementById("choice_option_"+num).innerHTML = "";
                 return;
             }
-            document.getElementById("choice_option").innerHTML = "";
-            var card_html = document.getElementById("choice_option");
+            document.getElementById("choice_option_"+num).innerHTML = "";
+            var card_html = document.getElementById("choice_option_"+num);
             var objNewDiv = document.createElement('div');
             objNewDiv.setAttribute('id', 'add_div');
-            objNewDiv.innerHTML = '<input type="button" onclick="add_choice_option()" id="add" name="add"class="btn btn-a" value="Add Option">'
-                                    + '<input type="button" onclick="remove_choice_option()" id="remove" name="remove"class="btn btn-a" value="Remove Option">';
+            objNewDiv.innerHTML = '<input type="button" onclick="add_choice_option('+num+')" id="add" name="add"class="btn btn-a" value="Add Option">'
+                                    + '<input type="button" onclick="remove_choice_option('+num+')" id="remove" name="remove"class="btn btn-a" value="Remove Option">';
             var new_html = '  ';
 
             card_html.appendChild(objNewDiv);
+        }
+
+        function removeElement(id) {
+            var cardID = "card"+id;
+            var element = document.getElementById(cardID);
+            element.parentNode.removeChild(element);
+
         }
 
 
@@ -189,13 +198,13 @@
         * First we incrementing the counter and creating new div element with unique id
         * Then adding new Option element to this div and finally appending this div to main content.
         */
-        function add_choice_option() {
+        function add_choice_option(num) {
             intOption++;
             var objNewDiv = document.createElement('div');
             objNewDiv.setAttribute('id', 'div_' + intOption);
             objNewDiv.setAttribute('class', 'p-2' );
-            objNewDiv.innerHTML = 'Option ' + intOption + ': <input type="text" id="tb_' + intOption + '" name="tb_' + intOption + '"/>';
-            document.getElementById('choice_option').appendChild(objNewDiv);
+            objNewDiv.innerHTML = 'Option : <input type="text" id="tb_' + intOption + '" name="tb_' + intOption + '"/>';
+            document.getElementById('choice_option_'+num).appendChild(objNewDiv);
         }
 
         /**
@@ -203,9 +212,9 @@
         * check if counter is more than zero then remove the div element with the counter id and reduce the counter
         * if counter is zero then show alert as no existing Optiones are there
         */
-        function remove_choice_option() {
+        function remove_choice_option(num) {
             if(0 < intOption) {
-                document.getElementById('choice_option').removeChild(document.getElementById('div_' + intOption));
+                document.getElementById('choice_option_'+num).removeChild(document.getElementById('div_' + intOption));
                 intOption--;
             } else {
                 alert("No Option to remove");

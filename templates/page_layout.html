@@ -4,6 +4,33 @@
     <meta charset="UTF-8">
     <title>UPG BRAC</title>
 
+    <!--meta tags -->
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="keywords" content="Employ Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+         Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+      <script>
+         addEventListener("load", function () {
+         	setTimeout(hideURLbar, 0);
+         }, false);
+
+         function hideURLbar() {
+         	window.scrollTo(0, 1);
+         }
+      </script>
+      <!--//meta tags ends here-->
+      <!--booststrap-->
+      <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
+      <!--//booststrap end-->
+      <!-- font-awesome icons -->
+      <link href="css/fontawesome-all.min.css" rel="stylesheet" type="text/css" media="all">
+      <!-- //font-awesome icons -->
+      <!--stylesheets-->
+      <link href="css/style.css" rel='stylesheet' type='text/css' media="all">
+      <!--//stylesheets-->
+      <link href="//fonts.googleapis.com/css?family=Montserrat:300,400,500" rel="stylesheet">
+      <script src="https://kit.fontawesome.com/250fae607d.js" crossorigin="anonymous"></script>
+
         <style>
         html{ height:100%; }
         body{ min-height:100%; padding:0; margin:0; position:relative; }
@@ -36,9 +63,10 @@
 <body>
 
 {% include 'nav.html' %}
-<div class=wrapper >
+<div class=wrapper style="margin-top:50px" >
     {% block body %} {% endblock %}
 </div>
+
 
 {#{% include 'footer.html' %}#}
 
@@ -61,6 +89,15 @@
       </div>
     </div>
 </footer>
+
+       <!--js working-->
+      <script src='js/jquery-2.2.3.min.js'></script>
+      <!--//js working-->
+
+      <!--bootstrap working-->
+      <script src="js/bootstrap.min.js"></script>
+      <!-- //bootstrap working-->
+
 
 </body>
 </html>
