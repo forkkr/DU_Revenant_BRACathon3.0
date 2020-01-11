@@ -1,0 +1,89 @@
+{% include 'admin/layout_admin.html' %}
+{% block body %}
+<div align="center">
+    <div style="width: 80% ; margin-bottom: 100px" >
+        <br/>
+        <h2>Assign Employee</h2>
+        <br/>
+
+        <form action = "../assign_emp" method = "POST" style="width: 50%">
+
+        <div class="form-group">
+          <label for="brac_id">BRAC Employee ID</label>
+          <input type="text" class="form-control" id="brac_id" placeholder="BRAC Employee ID" name="brac_id" required>
+
+        </div>
+
+            <span> Or</span>
+
+         <div class="form-group">
+          <label for="uname">Employee Name</label>
+          <input type="text" class="form-control" id="uname" placeholder="Full Name" name="uname" required>
+        </div>
+
+            <button type="button" class="btn btn-info" style="margin: 20px" id="employee_search">Search</button>
+
+        <div class="card" style="margin-bottom: 30px; background-color: rgba(46,116,124,0.55)">
+          <div class="card-header">Current Job Information</div>
+          <div class="card-body">
+
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Post</span>
+                </div>
+                  <output type="text" class="form-control"> Branch Manager </output>
+              </div>
+
+            <div class="input-group mb-3" >
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Branch</span>
+                </div>
+                  <output type="text" class="form-control"> Manikganj </output>
+              </div>
+
+          </div>
+          <div class="card-footer">Last Update: January 10, 2020</div>
+        </div>
+
+        <div class="form-group">
+            <label for="occupation">Assign Post</label>
+            <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="occupation" name="occupation">
+                <option selected>Choose...</option>
+                <option value="1">Head Office User</option>
+                <option value="2">Branch Manager</option>
+                <option value="3">Quality Controller</option>
+                <option value="4">Regional Manager</option>
+                <option value="5">Program Officer</option>
+
+            </select>
+            <span id="occupation_msg" style="font-size: small;color: red"></span>
+        </div>
+
+            <div class="form-group">
+            <label for="occupation">Select Branch</label>
+            <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="occupation" name="occupation">
+                <option selected>Choose...</option>
+                <option value="1">Branch 1</option>
+                <option value="2">Branch 2</option>
+                <option value="3">Branch 3</option>
+                <option value="4">Branch 4</option>
+                <option value="5">Branch 5</option>
+
+            </select>
+            <span id="occupation_msg" style="font-size: small;color: red"></span>
+        </div>
+
+            <div class="form-group">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" id="terms" name="terms" required> I have double-checked these information
+                </label><br/>
+                <span id="terms_msg" style="font-size: small;color: red"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" class="btn btn-dark btn-lg" value="Save">
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

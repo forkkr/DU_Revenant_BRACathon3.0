@@ -3,6 +3,7 @@ from flask import Flask, render_template, request, redirect, session
 from services import ReportGenerationS as RGS
 from classes import ReportGenerationClass as RGC
 from services import auth
+
 app = Flask(__name__)
 app.secret_key = "moonmuniakashob"
 
@@ -187,10 +188,45 @@ def analysis_correlation_graph_category():
     return render_template('analysis_correlation_graph_category.html')
 
 
-
 @app.route('/t', methods=['POST', 'GET'])
 def test():
-    return render_template('test.html')
+    return render_template('admin/add_employee.html')
+
+
+@app.route('/admin', methods=['POST', 'GET'])
+def admin_test():
+    return render_template('admin/adminHome.html')
+
+
+@app.route('/addingNewEmp', methods=['POST', 'GET'])
+def add_employee():
+    print('Adding Employee')
+    return render_template('admin/adminHome.html')
+
+
+@app.route('/addingNewBranch', methods=['POST', 'GET'])
+def add_branch():
+    print('Adding Branch')
+    return render_template('admin/add_branch.html')
+
+
+@app.route('/assign_emp', methods=['POST', 'GET'])
+def assign_employee():
+    print('Assigning Roles')
+    return render_template('admin/assign_role.html')
+
+
+@app.route('/all_emp', methods=['POST', 'GET'])
+def view_all_emp():
+    # pass
+    return render_template('admin/all_employee.html')
+
+
+@app.route('/all_br', methods=['POST', 'GET'])
+def view_all_branch():
+    # pass
+    return render_template('admin/all_branch.html')
+
 
 if __name__ == '__main__':
     app.run()

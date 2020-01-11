@@ -1,0 +1,63 @@
+{% include 'admin/layout_admin.html' %}
+{% block body %}
+
+<div align="center">
+    <div style="width: 80% ; margin-bottom: 100px" >
+        <br/>
+        <h2>Adding New Branch</h2>
+        <br/>
+
+        <form action = "../addingNewBranch" method = "POST" style="width: 40%">
+
+         <div class="form-group">
+          <label for="br_name">Branch Name</label>
+          <input type="text" class="form-control" id="br_name" placeholder="Full Name" name="br_name" required>
+          <div class="valid-feedback"></div>
+          <div class="invalid-feedback">Please fill out this field.</div>
+        </div>
+            <div class="form-group">
+          <label for="br_union">Union</label>
+          <input type="text" class="form-control" id="br_union" placeholder="Full Name" name="br_union" required>
+          <div class="valid-feedback"></div>
+          <div class="invalid-feedback">Please fill out this field.</div>
+        </div>
+        <div class="form-group">
+          <label for="br_upzilla">Upzilla</label>
+          <input type="text" class="form-control" id="br_upzilla" placeholder="Full Name" name="br_upzilla" required>
+          <div class="valid-feedback"></div>
+          <div class="invalid-feedback">Please fill out this field.</div>
+        </div>
+            <div class="form-group">
+          <label for="br_district">Disrtict</label>
+          <input type="text" class="form-control" id="br_district" placeholder="Full Name" name="br_district" required>
+          <div class="valid-feedback"></div>
+          <div class="invalid-feedback">Please fill out this field.</div>
+        </div>
+
+        <div class="form-group">
+            <label for="occupation">Assign Branch Manager</label>
+            <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="occupation" name="occupation">
+                  <option selected>Choose...</option>
+                <option value="1">Branch Manager 1</option>
+                <option value="2">Branch Manager 2</option>
+                <option value="3">Branch Manager 3</option>
+                <option value="4">Branch Manager 4</option>
+                <option value="5">Branch Manager 5</option>
+
+            </select>
+        </div>
+
+            <div class="form-group">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" id="terms" name="terms"> I have double-checked these information
+                </label><br/>
+                <span id="terms_msg" style="font-size: small;color: red"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" class="btn btn-dark btn-lg" value="Submit">
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

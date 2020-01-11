@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>UPG BRAC</title>
 
-        <style>
+    <style>
         html{ height:100%; }
         body{ min-height:100%; padding:0; margin:0; position:relative; }
         header{ height:50px; background:lightcyan; }
@@ -35,12 +35,17 @@
 
 <body>
 
-{% include 'nav.html' %}
+{% include 'admin/nav_admin.html' %}
 <div class=wrapper >
+<div class="container-fluid p-3 my-sm-4 bg-primary text-white">
+  <h5 class="text-center">You are logged in as an ADMIN</h5>
+{#  <p>This container has a dark background color and a white text, and some extra padding and margins.</p>#}
+</div>
     {% block body %} {% endblock %}
 </div>
 
 {#{% include 'footer.html' %}#}
+{#{% include 'admin/footer_admin.html' %}#}
 
 <footer>
     <div class="container-fluid">
