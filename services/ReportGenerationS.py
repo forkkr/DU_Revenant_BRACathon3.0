@@ -67,6 +67,14 @@ def get_all_responses(report_id):
 def get_response(response_id):
     return db.response.find_one({'_id':ObjectId(response_id)})
 
+def get_all_reports():
+    pymongo_cursor = db.reports.find()
+    all_data = list(pymongo_cursor)
+    report_list = []
+    for dt in all_data:
+        report_list.append([dt['_id'], dt['name']])
+    return report_list
+
 
 
 

@@ -9,6 +9,7 @@ from services import auth
 from paths.auth import app as auth_app
 from paths.admin.admin_path import app as admin_app
 from paths.head.head_path import app as head_app
+from paths.branch.branch_path import app as branch_app
 
 
 app = Flask(__name__)
@@ -18,18 +19,19 @@ app.secret_key = "moonmuniakashob"
 app.register_blueprint(auth_app)
 app.register_blueprint(admin_app)
 app.register_blueprint(head_app)
+app.register_blueprint(branch_app)
 
 
 @app.route('/')
-def home():
+def root():
     return redirect('/auth/home')
 
 
 
-# @app.route('/home')
-# def home():
-#     print(session['username'])
-#     return render_template('index.html', **locals())
+@app.route('/home')
+def home():
+    # print(session['username'])
+    return render_template('HO_dashboard.html', **locals())
 #
 #
 #
@@ -110,10 +112,11 @@ def report_generation_done(report_id):
 
 @app.route('/dashboard')
 def dashboard():
-    report_id = '5d32001e2ce6750a5b630230'
-    report = RGS.get_report(report_id)
-    report_list = []
-    report_list.append([report_id, report['name']])
+    report_list = RGS.get_all_reports()
+    # report_id = '5d32001e2ce6750a5b630230'
+    # report = RGS.get_report(report_id)
+    # report_list = []
+    # report_list.append([report_id, report['name']])
     return render_template('dashboard.html', **locals())
 
 
